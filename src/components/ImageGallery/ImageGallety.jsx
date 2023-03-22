@@ -47,7 +47,7 @@ class ImageGallery extends Component {
 
     let totalHits = 0;
 
-    // console.log(prevPage, currentPage);
+    
 
     if (prevSearch !== nextSearch || prevPage !== currentPage) {
       this.setState({ pending: true });
@@ -89,7 +89,7 @@ class ImageGallery extends Component {
 
                 return item;
               }
-              // `<li><a href="${largeImageURL}"><img src="${webformatURL}"></a></li>`
+              
             );
             return imagesCollection;
           })
@@ -106,15 +106,7 @@ class ImageGallery extends Component {
               // console.log('These are all search results');
               this.setState({ allSearchRes: true });
             }
-
-            // const { height: galleryBottom } = document
-            //   .querySelector('.ImageGallery')
-            //   .getBoundingClientRect();
-
-            // window.scrollBy({
-            //   top: galleryBottom - window.pageYOffset,
-            //   behavior: 'smooth',
-            // });
+ 
           })
           .catch(error => this.setState({ error, status: 'rejected' }))
           .finally(this.setState({ pending: false }));
@@ -161,10 +153,7 @@ class ImageGallery extends Component {
     }
 
     if (status === 'rejected') {
-      // toast.error(error.message, {
-      //   theme: 'colored',
-      //   toastId: 'badRequest',
-      // });
+      
       return (
         <section className="Warning">
           <p>{error.message}</p>
@@ -173,10 +162,7 @@ class ImageGallery extends Component {
     }
 
     if (status === 'noresult') {
-      // toast.warning(error.message, {
-      //   theme: 'colored',
-      //   toastId: 'noResult',
-      // });
+     
       return (
         <section className="Info">
           <p>{error.message}</p>;
